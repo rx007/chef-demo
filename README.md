@@ -57,6 +57,19 @@ cd /vagrant
 knife ssl fetch
 ```
 
+Knife configuration
+```
+# See https://docs.getchef.com/config_rb_knife.html for more information on knife configuration options
+
+current_dir = File.dirname(__FILE__)
+log_level                :info
+log_location             STDOUT
+node_name                "admin"
+client_key               "#{current_dir}/admin.pem"
+chef_server_url          "https://chef-server.local/organizations/demo"
+cookbook_path            ["#{current_dir}/../cookbooks"]
+```
+
 Bootstrap your own workstation as a node to chef server
 ```
 knife bootstrap 192.168.33.11 --sudo --identity-file /vagrant/.vagrant/machines/chefworks/virtualbox/private_key --node-name chef-workstation.local
