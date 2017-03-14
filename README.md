@@ -67,12 +67,12 @@ log_location             STDOUT
 node_name                "admin"
 client_key               "#{current_dir}/admin.pem"
 chef_server_url          "https://chef-server.local/organizations/demo"
-cookbook_path            ["#{current_dir}/../cookbooks"]
+cookbook_path            ["#{current_dir}/../cookbooks"]xi
 ```
 
 Bootstrap your own workstation as a node to chef server
 ```
-knife bootstrap 192.168.33.11 --sudo --identity-file /vagrant/.vagrant/machines/chefworks/virtualbox/private_key --node-name chef-workstation.local
+knife bootstrap 192.168.33.11 -x vagrant --sudo --identity-file /vagrant/.vagrant/machines/chefworks/virtualbox/private_key --node-name chef-workstation.local
 ```
 
 Check your nodes
